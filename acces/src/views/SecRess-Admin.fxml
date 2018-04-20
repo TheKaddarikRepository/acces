@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane hgap="14.0" maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="521.0" vgap="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ContSecRessAdmin">
+  <children>
+    <ImageView fitHeight="240.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
+      <image>
+        <Image url="@../views/images/bleuLock-2.png" />
+      </image>
+    </ImageView>
+    <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefHeight="118.0" prefWidth="149.0" spacing="7.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+      <children>
+        <Label fx:id="messageLabel" text="Login" textAlignment="LEFT" wrapText="true">
+          <font>
+            <Font name="System Bold" size="13.0" />
+          </font>
+        </Label>
+            <TextField fx:id="loginIN" maxWidth="220.0" minWidth="220.0" />
+        <Label fx:id="detailsLabel" text="Old Password" textAlignment="LEFT" wrapText="true">
+          <font>
+            <Font size="12.0" />
+          </font>
+        </Label>
+            <TextField fx:id="oldPasswordIN" maxWidth="220.0" minWidth="220.0" />
+            <Label fx:id="detailsLabel1" text="New Password" textAlignment="LEFT" wrapText="true">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="newPasswordOne" maxWidth="220.0" minWidth="220.0" />
+            <Label fx:id="detailsLabel11" text="New Password" textAlignment="LEFT" wrapText="true">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="newPasswordTwo" maxWidth="220.0" minWidth="220.0" />
+            <Label fx:id="detailsLabel111" text="Roles" textAlignment="LEFT" wrapText="true">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <CheckBox fx:id="employeeCheck" minWidth="110.0" mnemonicParsing="false" text="Employee" />
+                  <CheckBox fx:id="resourceCheck" minWidth="110.0" mnemonicParsing="false" text="Resource" />
+                  <CheckBox fx:id="profilCheck" minWidth="110.0" mnemonicParsing="false" text="Profil" />
+               </children>
+            </HBox>
+      </children>
+    </VBox>
+  <Button fx:id="cancelButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#cancelBut" text="Cancel" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+<Button fx:id="updateButton" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#updateUser" text="Update" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Button fx:id="newButton" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#newUser" text="New" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <CheckBox fx:id="adminCheck" mnemonicParsing="false" text="Admin" />
+  </children>
+  <columnConstraints>
+    <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="153.0" minWidth="-Infinity" prefWidth="147.0" />
+    <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity" minWidth="-Infinity" prefWidth="149.0" />
+  </columnConstraints>
+  <padding>
+    <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+  </padding>
+  <rowConstraints>
+    <RowConstraints maxHeight="Infinity" minHeight="-Infinity" prefHeight="267.0" valignment="BOTTOM" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" valignment="CENTER" vgrow="ALWAYS" />
+  </rowConstraints>
+  <stylesheets>
+    <URL value="@AlertDialog_css/AlertDialog.css" />
+  </stylesheets>
+</GridPane>

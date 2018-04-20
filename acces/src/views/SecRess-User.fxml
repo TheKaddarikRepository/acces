@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="890.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ContSecRessUser">
+  <children>
+    <fx:include fx:id="embeddedMyMenuBar" source="MyMenuBar.fxml" />
+      <AnchorPane prefHeight="1810.0" prefWidth="1087.0">
+         <children>
+            <SplitPane dividerPositions="0.2304147465437788" layoutX="281.0" layoutY="167.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="160.0" prefWidth="247.0" SplitPane.resizableWithParent="false">
+                     <children>
+                        <ImageView fitHeight="252.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../views/images/bleuLock-2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="popUpAlarm" fitHeight="65.0" fitWidth="77.0" layoutX="170.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../views/images/Warning.png" />
+                           </image>
+                        </ImageView>
+                        <fx:include fx:id="embeddedEmployeeList" source="EmployeeList.fxml" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <SplitPane dividerPositions="0.7228915662650602" layoutY="4.0" prefHeight="833.0" prefWidth="832.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5657418576598311" layoutX="210.0" layoutY="603.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="0.0" prefHeight="466.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+                                             <children>
+                                                <Accordion layoutX="205.0" layoutY="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <panes>
+                                                    <TitledPane fx:id="employeeInfo" alignment="TOP_LEFT" animated="false" text="Employee">
+                                                         <content>
+                                                            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <TextField fx:id="employeeName" layoutX="150.0" layoutY="75.0" prefHeight="25.0" prefWidth="350.0" />
+                                                                  <TextField fx:id="employeeFirstname" layoutX="150.0" layoutY="120.0" prefHeight="25.0" prefWidth="350.0" />
+                                                                  <Label layoutX="35.0" layoutY="255.0" prefHeight="20.0" prefWidth="170.0" text="Employee access profile :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="35.0" layoutY="165.0" prefHeight="20.0" prefWidth="110.0" text="Hired on date :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="35.0" layoutY="75.0" prefHeight="20.0" prefWidth="110.0" text="Name :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="35.0" layoutY="120.0" prefHeight="20.0" prefWidth="110.0" text="Firstname :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="35.0" layoutY="210.0" prefHeight="20.0" prefWidth="110.0" text="Fired on date :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <DatePicker fx:id="hireDate" layoutX="150.0" layoutY="163.0" />
+                                                                  <DatePicker fx:id="fireDate" layoutX="150.0" layoutY="210.0" />
+                                                                  <ComboBox fx:id="employeeProfile" layoutX="230.0" layoutY="255.0" prefHeight="25.0" prefWidth="270.0" />
+                                                                  <Button fx:id="addEmployee" layoutX="48.0" layoutY="367.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Add" />
+                                                                  <Button fx:id="modifyEmployee" layoutX="248.0" layoutY="367.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Modify" />
+                                                                  <Button fx:id="cancelEmployee" cancelButton="true" layoutX="448.0" layoutY="367.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Cancel" />
+                                                                  <Label layoutX="35.0" layoutY="30.0" prefHeight="20.0" prefWidth="110.0" text="Employee N° :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <TextField fx:id="employeeID" disable="true" layoutX="150.0" layoutY="30.0" prefHeight="25.0" prefWidth="350.0">
+                                                                     <effect>
+                                                                        <SepiaTone level="0.7" />
+                                                                     </effect>
+                                                                  </TextField>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </content>
+                                                      </TitledPane>
+                                                    <TitledPane animated="false" expanded="false" text="Badge">
+                                                         <content>
+                                                            <AnchorPane fx:id="badgeInfo" prefHeight="200.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <TextField fx:id="badgeID" disable="true" layoutX="150.0" layoutY="30.0" prefHeight="25.0" prefWidth="350.0">
+                                                                     <effect>
+                                                                        <SepiaTone level="0.7" />
+                                                                     </effect>
+                                                                  </TextField>
+                                                                  <Label layoutX="35.0" layoutY="30.0" prefHeight="20.0" prefWidth="110.0" text="Badge N° :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button fx:id="linkBadge" cancelButton="true" layoutX="454.0" layoutY="370.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Link" />
+                                                                  <Button fx:id="modifyBadge" layoutX="248.0" layoutY="370.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Modify" />
+                                                                  <Button fx:id="addBadge" layoutX="48.0" layoutY="370.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Add" />
+                                                                  <DatePicker fx:id="badgeCreateDate" editable="false" layoutX="180.0" layoutY="165.0" />
+                                                                  <Label layoutX="35.0" layoutY="75.0" prefHeight="20.0" prefWidth="110.0" text="Activation :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="35.0" layoutY="165.0" prefHeight="20.0" prefWidth="110.0" text="Creation date :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="35.0" layoutY="120.0" prefHeight="20.0" prefWidth="110.0" text="Lost :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="35.0" layoutY="255.0" prefHeight="20.0" prefWidth="110.0" text="Activation date">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="35.0" layoutY="300.0" prefHeight="20.0" prefWidth="170.0" text="Deactivation date :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <CheckBox fx:id="badgeInactive" layoutX="185.0" layoutY="75.0" mnemonicParsing="false" text="Inactive">
+                                                                     <font>
+                                                                        <Font name="System Bold Italic" size="14.0" />
+                                                                     </font>
+                                                                  </CheckBox>
+                                                                  <CheckBox fx:id="badgeActive" layoutX="350.0" layoutY="75.0" mnemonicParsing="false" text="Active">
+                                                                     <font>
+                                                                        <Font name="System Bold Italic" size="14.0" />
+                                                                     </font>
+                                                                  </CheckBox>
+                                                                  <CheckBox fx:id="badgeBlocked" layoutX="260.0" layoutY="120.0" mnemonicParsing="false" text="Blocked">
+                                                                     <font>
+                                                                        <Font name="System Bold Italic" size="14.0" />
+                                                                     </font>
+                                                                  </CheckBox>
+                                                                  <DatePicker fx:id="badgeActiveDate" editable="false" layoutX="180.0" layoutY="255.0" />
+                                                                  <DatePicker fx:id="badgeBlockedDate" editable="false" layoutX="180.0" layoutY="300.0" />
+                                                                  <Label layoutX="35.0" layoutY="210.0" prefHeight="20.0" prefWidth="110.0" text="Employee N° :">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ChoiceBox fx:id="badgeAssoEmployee" layoutX="150.0" layoutY="210.0" prefWidth="350.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </content>
+                                                      </TitledPane>
+                                                  </panes>
+                                                </Accordion>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minWidth="0.0" prefHeight="357.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+                                             <children>
+                                                <TableView fx:id="assoBadgeEmployee" layoutX="123.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <columns>
+                                                    <TableColumn minWidth="-Infinity" prefWidth="120.0" text="Badge" />
+                                                    <TableColumn minWidth="-Infinity" prefWidth="180.0" text="Employee" />
+                                                      <TableColumn minWidth="-Infinity" prefWidth="120.0" text="From" />
+                                                      <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="120.0" text="Till" />
+                                                      <TableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="54.0" text="Status" />
+                                                  </columns>
+                                                </TableView>
+                                             </children></AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                            <fx:include fx:id="embeddedBadgesList" source="BadgesList.fxml" />
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+      <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="769.0" VBox.vgrow="ALWAYS">
+         <items>
+            <Label fx:id="NbEmployee" prefHeight="17.0" prefWidth="145.0" text="Label" />
+            <Label fx:id="NbRessources" prefHeight="17.0" prefWidth="150.0" text="Label" />
+            <ImageView fx:id="serviceActiv" fitHeight="20.0" fitWidth="423.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../views/images/processing-IS.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="timeRunning" alignment="CENTER_RIGHT" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" prefWidth="740.0" text="VirtualTime" textAlignment="RIGHT">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Label>
+         </items>
+      </ToolBar>
+  </children>
+  <stylesheets>
+    <URL value="@BasicApplication_css/BasicApplication.css" />
+  </stylesheets>
+</VBox>

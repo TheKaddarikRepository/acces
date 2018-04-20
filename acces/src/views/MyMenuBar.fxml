@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MyMenuBar">
+	<children>
+		<MenuBar VBox.vgrow="NEVER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Start">
+					<items>
+						<MenuItem fx:id="startGestion" mnemonicParsing="false" onAction="#lancerGestion" text="Start Service" />
+						<MenuItem fx:id="stopGestion" mnemonicParsing="false" onAction="#arreterGestion" text="Stop Service" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="admin" mnemonicParsing="false" onAction="#openAdmin" text="Administration" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="quitApp" mnemonicParsing="false" onAction="#stopViews" text="Quit" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="New">
+					<items>
+						<MenuItem fx:id="hireEmployee" mnemonicParsing="false" onAction="#openUsers" text="Employee Admin" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="setProfils" mnemonicParsing="false" onAction="#openProfil" text="Profil Admin" />
+						<MenuItem fx:id="setRessources" mnemonicParsing="false" onAction="#openResource" text="Ressource Admin" />
+						<MenuItem fx:id="startSim" mnemonicParsing="false" onAction="#openSimu" text="Start Simulation" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="setVacancy" onAction="#openAbs" text="Schedule Vacancy" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Review">
+					<items>
+						<MenuItem fx:id="dispLogs" mnemonicParsing="false" onAction="#openLogs" text="Show Logs" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</children>
+	<stylesheets>
+		<URL value="@BasicApplication_css/BasicApplication.css" />
+	</stylesheets>
+</VBox>

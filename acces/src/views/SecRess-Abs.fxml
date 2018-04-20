@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="890.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ContSecRessAbs">
+  <children>
+      <fx:include fx:id="embeddedMyMenuBar" source="MyMenuBar.fxml" />
+      <AnchorPane prefHeight="1810.0" prefWidth="1087.0">
+         <children>
+            <SplitPane dividerPositions="0.2304147465437788" layoutX="281.0" layoutY="167.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="160.0" prefWidth="247.0">
+                     <children>
+                        <ImageView fitHeight="252.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../views/images/bleuLock-2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="popUpAlarm" fitHeight="65.0" fitWidth="77.0" layoutX="170.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../views/images/Warning.png" />
+                           </image>
+                        </ImageView>
+                        <fx:include fx:id="embeddedEmployeeList" source="EmployeeList.fxml" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+                     <children>
+                        <SplitPane dividerPositions="0.6594464500601684" layoutX="354.0" layoutY="316.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <TableView fx:id="vacancyList" layoutX="255.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="178.0" text="Name" />
+                                        <TableColumn prefWidth="333.0" text="Description" />
+                                          <TableColumn prefWidth="157.0" text="From" />
+                                          <TableColumn prefWidth="161.0" text="Till" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
+                            <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="0.0" prefHeight="280.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="33.0" text="Description">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="vacancyDesc" layoutX="103.0" layoutY="33.0" prefHeight="65.0" prefWidth="687.0" />
+                                    <DatePicker fx:id="vacancyFromDate" layoutX="103.0" layoutY="156.0" />
+                                    <DatePicker fx:id="vacancyTillDate" layoutX="616.0" layoutY="156.0" />
+                                    <Label layoutX="173.0" layoutY="121.0" text="From">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="693.0" layoutY="121.0" text="Till">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="vacancyNew" layoutX="150.0" layoutY="223.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#newAbs" text="New" />
+                                    <Button fx:id="vacancyModify" cancelButton="true" layoutX="417.0" layoutY="223.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#chgAbs" text="Modify" />
+                                    <Button fx:id="vacancyCancel" cancelButton="true" layoutX="663.0" layoutY="223.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#clearAbs" text="Cancel" />
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+      <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="769.0" VBox.vgrow="ALWAYS">
+         <items>
+            <Label fx:id="NbEmployee" prefHeight="17.0" prefWidth="145.0" text="Label" />
+            <Label fx:id="NbRessources" prefHeight="17.0" prefWidth="150.0" text="Label" />
+            <ImageView fx:id="serviceActiv" fitHeight="20.0" fitWidth="423.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../views/images/processing-IS.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="runningTime" alignment="CENTER_RIGHT" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" prefWidth="740.0" text="VirtualTime" textAlignment="RIGHT">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Label>
+         </items>
+      </ToolBar>
+  </children>
+  <stylesheets>
+    <URL value="@BasicApplication_css/BasicApplication.css" />
+  </stylesheets>
+</VBox>
